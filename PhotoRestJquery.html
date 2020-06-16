@@ -1,0 +1,96 @@
+<html>
+<head>
+<script src="jquery-3.5.0.min.js"></script>
+<script>
+$(document).ready(function(){
+index = 0;
+users = []
+token = "5ce140b7381049059e5265a06c1f7f39"
+domain = "cc253804eecf4e53b91fd669ba64ad36"
+
+
+function getUsers(){
+	$.ajax({
+            url: "rest/atlas/v1/directories/" + domain + "/users",
+            type: 'GET',
+            headers: {
+                'X-Auth-Token': token
+            },
+            contentType: 'application/json; charset=utf-8',
+            success: function (data, ok, response) {
+                users = data.users;
+                alert("Got " + users.length + " users");
+            },
+            error: function (error) {
+                alert("Failed to get list of users");
+            }
+	});
+
+}
+function getNextUser(){ 
+   index++;
+   if (index == users.length){
+          index = 0;
+   }
+}
+$("#btnSubmit").click(function(){
+        $("#num").val(index);
+        $("#adname").val(users[index].name);
+        $("#adid").val(users[index].id);
+	$.ajax({
+            url: "rest/atlas/v1/users/" + users[index].id + "/photo",
+            type: 'GET',
+            headers: {
+                'X-Auth-Token': token
+            },
+            contentType: 'application/json; charset=utf-8',
+            success: function (data, ok, response) {
+               var imageType = response.getResponseHeader('Content-Type');
+               alert("Received image type:" + imageType);
+               $("#adimage").attr("src", "data:" + imageType +";base64,"+data);
+               $("#adimage").show();
+               getNextUser();
+            },
+            error: function (error) {
+                alert("No Photo");
+                $("#adimage").hide();
+                getNextUser();
+            }
+        });
+});
+
+// Main
+
+getUsers();
+
+});
+</script>
+<style>
+.form-element label {
+    display: inline-block;
+    width: 80px;
+}
+</style>
+</head>
+<body>
+<input id = "btnSubmit" type="submit" value="Get Next Photo"/>
+<br/>
+<div class="form-element">
+<label for="num">Index</label>
+<input id="num" type="text" disabled value="****" />
+</div>
+<br/>
+<div class="form-element">
+<label for="adname">User Name</label>
+<input id="adname" type="text" disabled value="****" />
+</div> 
+<br/>
+<div class="form-element">
+<label for="adid">User Id</label>
+<input id="adid" type="text" disabled value="****" />
+</div>
+<br/>
+<img id="adimage"/>
+<br/>
+</body>
+<html>
