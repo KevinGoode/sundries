@@ -12,7 +12,7 @@ How to run code on raspberry pi
 5. Run webserver (eg php -S 192.168.1.9:3000)
 6. Open GUI app in browser: http://192.168.1.9:3000
 Should be forwarded to keycloak login page as shown:
-![Image of Fokker](https://github.com/KevinGoode/sundries/screenshot.png)
+![Image of login](https://github.com/KevinGoode/sundries/proxy-to-keycloak-login/images/keycloak.jpg)
 Where to next? We have learnt here that Keycloak GUI can be used to configure users for a particular project and even to display login page (DETAILS TODO). However, to authenticate (and thereafter authorize) a GUI app's REST API we need to do some more work. It is common parctice to implement authn and authz middleware server side that intercepts requests and performs authn and authz before calling REST handlers. There are 2 options for token validation: online validation and offline validation
 
 1. **Online.** Implement a function to inspect each request for a bearer token and send that token off for validation by your keycloak server at the userinfo endpoint before it is passed to your api's route handlers. - **Unfortunately this means for every REST CALL there is a authn call to keycloak**
