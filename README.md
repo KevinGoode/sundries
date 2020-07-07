@@ -1,9 +1,3 @@
-
-## How to install  rpm (on either Centos 7 or inside container)
- 
- 1. Install rpm (in container)
-```console
-container-prompt> cd /usr/src/dist; rpm -Uvh <rpm-name>.noarch.rpm
 ```
 ## Sundries
 This project contains a number of sub-directories that contain CODE-SNIPPETS rather than fully functional working code
