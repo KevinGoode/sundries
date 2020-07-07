@@ -1,4 +1,3 @@
-```
 ## Sundries
 This project contains a number of sub-directories that contain CODE-SNIPPETS rather than fully functional working code
  
