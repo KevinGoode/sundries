@@ -1,0 +1,37 @@
+!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="openidconnect.js" type="text/javascript"></script>
+    <title>Simple Web Page</title>
+    <style>
+      h1 {
+        margin: 2em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Simple Web Page</h1>
+      <div id="messageBox" class="jumbotron">
+         Callback
+      </div>
+      <div id="okta-login-container"></div>
+    </div>
+<!-- use the Okta widget to power authentication! -->
+<script type="text/javascript">
+// Restore configuration information
+OIDC.restoreInfo();
+
+// Get ID Token: Returns ID Token if valid, else error. 
+var id_token = OIDC.getValidIdToken();
+
+// Get code
+var code = OIDC.getCode();
+
+// Get Access Token
+var token = OIDC.getAccessToken();  
+</script>
+  </body>
+</html>

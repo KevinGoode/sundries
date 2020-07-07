@@ -1,0 +1,47 @@
+!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="openidconnect.js" type="text/javascript"></script>
+    <title>Simple Web Page</title>
+    <style>
+      h1 {
+        margin: 2em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Simple Web Page</h1>
+      <div id="messageBox" class="jumbotron">
+        You are not logged in. Get outta here! 
+      </div>
+      <div id="okta-login-container"></div>
+    </div>
+<!-- use the Okta widget to power authentication! -->
+<script type="text/javascript">
+  // set client_id and redirect_uri
+var clientInfo = {
+    client_id : 'example-app',
+    redirect_uri : 'http://192.168.1.9:3000/callback.html'
+};
+OIDC.setClientInfo( clientInfo );
+
+// set Identity Provider configuration information using discovery
+var providerInfo = OIDC.discover('http://192.168.1.9:8180/auth/realms/demo');
+OIDC.setProviderInfo( providerInfo );
+
+// store configuration for reuse in the callback page
+OIDC.storeInfo(providerInfo, clientInfo)
+
+alert("Click to login");
+OIDC.login( {
+              scope : 'openid',
+              response_type : 'id_token token',
+              //state: 'af0ifjsldkj',
+             }
+           );
+</script>
+  </body>
+</html>
