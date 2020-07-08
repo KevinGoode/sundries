@@ -16,16 +16,19 @@ The reason why I connected my HP Deskjet 3050 J610 by USB cable to a raspberry p
  ```
 3. Open a browser to pi on port 631 and select 'Add Printer'
 4. From discovered printers select 'USB' variant. eg
-![cups1](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups1.jpg)  
+![cups1](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups1.jpg) 
 
 5. Select driver
-![cups2](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups2.jpg)
+
+![cups2](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups2.jpg)  
+
 6. Configure default options (BW/grayscale) (optional)
 7. Configure a class and add printer to it. (optional) eg 'all'  (This is useful if want to add a group of printers and connect to group of them)
 8. From windows (eg 10) go to control panel and add printer address
 eg http://192.168.1.9:631/printers/HP_Deskjet_3050_J610_series. NB this uses the IPP protocol this should be already enabled in windows ( Control Panel/Programs/Turn Windows Features On/Print And Document Services/" switch on window features/Internet Printing Client) NB Samba is not installed in CUPS docker container so samba discovery will not work when adding a printer in control panel.
 ![cups3](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups3.jpg)
 9. The 'Add Printer' wizard in windows control panel should connect to the CUPS server and then offer up a list of drivers. Whichever printer you are using simply select 'Generic/MS Published ImageSetter'. 
-![cups4](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups4.jpg)
+![cups4](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups4.jpg)  
+
 NOTE IF USING A LINUX CLIENT SUCH AS UBUNTU CHOOSE 'Generic Postscript'
 
