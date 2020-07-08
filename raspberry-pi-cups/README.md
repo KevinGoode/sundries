@@ -14,7 +14,7 @@ The reason why I connected my HP Deskjet 3050 J610 by USB cable to a raspberry p
  ```console
  sudo docker run -d --restart unless-stopped -p 631:631 --privileged -v /var/run/dbus:/var/run/dbus -v /dev/bus/usb:/dev/bus/usb lemariva/rpi-cups
  ```
-3. Open a browser to pi on port 631 and select 'Add Printer'
+3. Open a browser to pi on port 631 and select 'Add Printer' ( If you need a username and password, they are print and print )
 4. From discovered printers select 'USB' variant. eg
 ![cups1](https://github.com/KevinGoode/sundries/blob/master/raspberry-pi-cups/images/cups1.jpg) 
 
