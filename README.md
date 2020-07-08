@@ -12,4 +12,14 @@ Html file is fully functional. Python code gives snippets of how a file is read 
 This sample code shows how a GUI app can proxy its login page to an openidc auth provider: keycloak
 ```
 
+ 3. raspberry-pi-cups
+```console
+This description describes how to run a print server as a docker container on a raspberry pi4 
+```
+
+ 4. raspbian-docker-base
+```console
+This directory contains the base raspbian docker image reference
+```
+
 
