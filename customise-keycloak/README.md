@@ -1,5 +1,8 @@
 ## customise-keycloak
-This article explains how to customise keycloak by creating a new theme.
+This article explains how to customise keycloak by creating a new theme. This article describes just how to change images but it is possible to change most of style (See references below) .
+
+## Where next?
+For an app that includes user management , the theme in keycloak could be set the same as the app so that user management looks part of the app. Could also potentially embed keycloak as an iframe in app so looks like one app but would probably need to login to iframe to perform user management. Need to look into a way of getting around this. 
 
 How to run code on raspberry pi
  1. Install docker on raspberry pi (https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl)
