@@ -24,6 +24,13 @@ http://192.168.1.9:8180/auth/realms/demo/account
   docker cp keycloak:/data/keycloak-4.8.1.Final/themes/keycloak ./theme
  ```
  6. Create favicon.ico, background.png and logo.png (123x25px) and replace files: /keycloak/login/resources/img/keycloak-bg.png with contents from background.png, all favicon.ico and logo.png in keycloak/account/resources/img and keyclok-logo.png in keycloak/admin/resources/img . Examples are in images directory
+ 
+ 
+ ![screen1](https://github.com/KevinGoode/sundries/blob/master/customise-keycloak/images/screenshot1.jpg)
+ 
+ 
+ ![screen2](https://github.com/KevinGoode/sundries/blob/master/customise-keycloak/images/screenshot2.jpg)
+  
 ### References
 See [https://robferguson.org/blog/2020/04/12/keycloak-themes-part-1/](https://robferguson.org/blog/2020/04/12/keycloak-themes-part-1/)
 Also see 
