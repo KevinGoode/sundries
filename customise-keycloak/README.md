@@ -25,7 +25,7 @@ http://192.168.1.9:8180/auth/realms/demo/account
  ```
  6. Create favicon.ico, background.png and logo.png (123x25px) and replace files: /keycloak/login/resources/img/keycloak-bg.png with contents from background.png, all favicon.ico and logo.png in keycloak/account/resources/img and keyclok-logo.png in keycloak/admin/resources/img . Examples are in images directory
  
- 7. Rename directory theme/keystone to theme/kev and copy kev back into keycloak theme directory.
+ 7. Rename directory theme/keystone to theme/kev and copy kev back into container theme directory at same level as keycloak . IE data/keycloak-4.8.1.Final/themes/kev should be very similar to data/keycloak-4.8.1.Final/themes/keycloak except with the modified file contents described in previous step.
  
  8. Login to keycloak and set theme of realm to 'kev'
  
