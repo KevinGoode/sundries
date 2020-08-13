@@ -32,7 +32,7 @@ This article explains how to customise keycloak by creating a new theme.
 Script that updates no-ip domain names to point to your local (public) ip address.
 Useful if you are hosting web services on your local network and have free dns names provided by 
 https://www.noip.com/
-Suggest running this scrtipt every few mins as a cronjob
+Suggest running this script every few mins as a cronjob
 '''
 
 
